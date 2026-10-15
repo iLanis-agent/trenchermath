@@ -1,0 +1,266 @@
+[
+ {
+  "fn": "trenchTruth",
+  "args": [
+   80,
+   100
+  ],
+  "out": "The trencher claims 100 feet an hour; your 80-foot run is 0.8 hours - done before lunch."
+ },
+ {
+  "fn": "trenchTruth",
+  "args": [
+   100,
+   100
+  ],
+  "out": "The trencher claims 100 feet an hour; your 100-foot run is 1.0 hour - done before lunch."
+ },
+ {
+  "fn": "trenchTruth",
+  "args": [
+   250,
+   100
+  ],
+  "out": "The trencher claims 100 feet an hour; your 250-foot run is 2.5 hours - a working morning."
+ },
+ {
+  "fn": "trenchTruth",
+  "args": [
+   500,
+   100
+  ],
+  "out": "The trencher claims 100 feet an hour; your 500-foot run is 5.0 hours - an honest afternoon."
+ },
+ {
+  "fn": "trenchTruth",
+  "args": [
+   800,
+   100
+  ],
+  "out": "The trencher claims 100 feet an hour; your 800-foot run is 8.0 hours - a two-day rental honestly."
+ },
+ {
+  "fn": "trenchTruth",
+  "args": [
+   120,
+   60
+  ],
+  "out": "The trencher claims 60 feet an hour; your 120-foot run is 2.0 hours - a working morning."
+ },
+ {
+  "fn": "trenchTruth",
+  "args": [
+   0,
+   100
+  ],
+  "err": "the trench length must be above zero"
+ },
+ {
+  "fn": "trenchTruth",
+  "args": [
+   80,
+   0
+  ],
+  "err": "the claimed feet per hour must be above zero"
+ },
+ {
+  "fn": "spoilTruth",
+  "args": [
+   80,
+   6,
+   18,
+   3
+  ],
+  "out": "An 80-foot trench 6 inches wide and 18 inches deep lifts about 60.0 cubic feet of spoil - 20 barrow loads of 3 cubic feet, a mountain honestly."
+ },
+ {
+  "fn": "spoilTruth",
+  "args": [
+   10,
+   4,
+   12,
+   3
+  ],
+  "out": "A 10-foot trench 4 inches wide and 12 inches deep lifts about 3.3 cubic feet of spoil - 2 barrow loads of 3 cubic feet, a few trips with the barrow."
+ },
+ {
+  "fn": "spoilTruth",
+  "args": [
+   30,
+   6,
+   12,
+   3
+  ],
+  "out": "A 30-foot trench 6 inches wide and 12 inches deep lifts about 15.0 cubic feet of spoil - 5 barrow loads of 3 cubic feet, a few trips with the barrow."
+ },
+ {
+  "fn": "spoilTruth",
+  "args": [
+   100,
+   8,
+   24,
+   3
+  ],
+  "out": "A 100-foot trench 8 inches wide and 24 inches deep lifts about 133.3 cubic feet of spoil - 45 barrow loads of 3 cubic feet, call it a second pile."
+ },
+ {
+  "fn": "spoilTruth",
+  "args": [
+   300,
+   8,
+   24,
+   3
+  ],
+  "out": "A 300-foot trench 8 inches wide and 24 inches deep lifts about 400.0 cubic feet of spoil - 134 barrow loads of 3 cubic feet, call it a second pile."
+ },
+ {
+  "fn": "spoilTruth",
+  "args": [
+   80,
+   1,
+   1,
+   3
+  ],
+  "out": "An 80-foot trench 1 inch wide and 1 inch deep lifts about 0.6 cubic feet of spoil - 1 barrow load of 3 cubic feet, a few trips with the barrow."
+ },
+ {
+  "fn": "spoilTruth",
+  "args": [
+   80,
+   6,
+   18,
+   6
+  ],
+  "out": "An 80-foot trench 6 inches wide and 18 inches deep lifts about 60.0 cubic feet of spoil - 10 barrow loads of 6 cubic feet, a working pile."
+ },
+ {
+  "fn": "spoilTruth",
+  "args": [
+   0,
+   6,
+   18,
+   3
+  ],
+  "err": "the trench length must be above zero"
+ },
+ {
+  "fn": "spoilTruth",
+  "args": [
+   80,
+   0,
+   18,
+   3
+  ],
+  "err": "the width must be above zero"
+ },
+ {
+  "fn": "spoilTruth",
+  "args": [
+   80,
+   6,
+   0,
+   3
+  ],
+  "err": "the depth must be above zero"
+ },
+ {
+  "fn": "spoilTruth",
+  "args": [
+   80,
+   6,
+   18,
+   0
+  ],
+  "err": "the barrow size must be above zero"
+ },
+ {
+  "fn": "daylightTruth",
+  "args": [
+   9,
+   80,
+   100
+  ],
+  "out": "Starting at 9:00 AM with 0.8 hours of trenching puts the last scoop down at about 9:48 AM - morning coffee is safe."
+ },
+ {
+  "fn": "daylightTruth",
+  "args": [
+   8,
+   250,
+   100
+  ],
+  "out": "Starting at 8:00 AM with 2.5 hours of trenching puts the last scoop down at about 10:30 AM - morning coffee is safe."
+ },
+ {
+  "fn": "daylightTruth",
+  "args": [
+   13,
+   500,
+   100
+  ],
+  "out": "Starting at 1:00 PM with 5.0 hours of trenching puts the last scoop down at about 6:00 PM - a headlamp job honestly."
+ },
+ {
+  "fn": "daylightTruth",
+  "args": [
+   15,
+   800,
+   100
+  ],
+  "out": "Starting at 3:00 PM with 8.0 hours of trenching puts the last scoop down at about 11:00 PM - a headlamp job honestly."
+ },
+ {
+  "fn": "daylightTruth",
+  "args": [
+   10,
+   120,
+   60
+  ],
+  "out": "Starting at 10:00 AM with 2.0 hours of trenching puts the last scoop down at about 12:00 PM - morning coffee is safe."
+ },
+ {
+  "fn": "daylightTruth",
+  "args": [
+   6,
+   50,
+   100
+  ],
+  "out": "Starting at 6:00 AM with 0.5 hours of trenching puts the last scoop down at about 6:30 AM - morning coffee is safe."
+ },
+ {
+  "fn": "daylightTruth",
+  "args": [
+   -1,
+   80,
+   100
+  ],
+  "err": "the start hour must be between 0 and 24"
+ },
+ {
+  "fn": "daylightTruth",
+  "args": [
+   24,
+   80,
+   100
+  ],
+  "err": "the start hour must be between 0 and 24"
+ },
+ {
+  "fn": "daylightTruth",
+  "args": [
+   9,
+   0,
+   100
+  ],
+  "err": "the trench length must be above zero"
+ },
+ {
+  "fn": "daylightTruth",
+  "args": [
+   9,
+   80,
+   0
+  ],
+  "err": "the claimed feet per hour must be above zero"
+ }
+]
