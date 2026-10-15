@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trencher Math</title>
+<style>
+  :root { --accent: #5e6e2e; --warn: #a83232; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 32px 16px 64px; background: #f8f8f4; color: #272822;
+         font-family: Georgia, 'Times New Roman', serif; }
+  main { max-width: 680px; margin: 0 auto; }
+  h1 { color: var(--accent); font-size: 2.2rem; margin: 0 0 4px; }
+  .tag { font-style: italic; color: var(--accent); margin: 0 0 28px; }
+  .boundary { border-left: 4px solid var(--warn); background: #fdf1f1; padding: 16px 20px;
+              border-radius: 8px; margin: 0 0 28px; }
+  .boundary h2 { color: var(--warn); font-size: 1.1rem; margin: 0 0 8px; }
+  .boundary p { margin: 0; line-height: 1.5; }
+  .card { background: #fff; border: 1px solid #e0e1d6; border-left: 4px solid var(--accent);
+          border-radius: 8px; padding: 20px 24px; margin: 0 0 24px; }
+  .card h2 { margin: 0 0 14px; font-size: 1.25rem; }
+  label { display: block; font-size: 0.95rem; margin: 10px 0 4px; }
+  input { width: 100%; max-width: 220px; padding: 8px 10px; font-size: 1rem;
+          border: 1px solid #c9cbba; border-radius: 6px; background: #f2f3ec; }
+  .out { margin-top: 16px; font-size: 1.05rem; font-weight: bold; color: var(--accent);
+         line-height: 1.5; }
+  .out.err { color: var(--warn); }
+  footer { margin-top: 32px; font-size: 0.85rem; color: #83856f; line-height: 1.5; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Trencher Math</h1>
+  <p class="tag">Trench truth, spoil truth and daylight truth - labeled norms, honest arithmetic.</p>
+
+  <div class="boundary">
+    <h2>The boundary</h2>
+    <p>Trencher Math keeps schedule, spoil and daylight arithmetic only. It gives no verdicts about
+    what any trencher can cut through - soil, roots and rock are the rental counter's and the
+    manual's call. Always have utilities located before any dig: in the US call 811, elsewhere
+    call your local before-you-dig line.</p>
+  </div>
+
+  <div class="card">
+    <h2>The trench truth</h2>
+    <label for="t-len">Trench length (feet)</label>
+    <input id="t-len" type="number" step="any" value="80">
+    <label for="t-claim">Claimed feet per hour</label>
+    <input id="t-claim" type="number" step="any" value="100">
+    <p class="out" id="t-out"></p>
+  </div>
+
+  <div class="card">
+    <h2>The spoil truth</h2>
+    <label for="s-len">Trench length (feet)</label>
+    <input id="s-len" type="number" step="any" value="80">
+    <label for="s-w">Width (inches)</label>
+    <input id="s-w" type="number" step="any" value="6">
+    <label for="s-d">Depth (inches)</label>
+    <input id="s-d" type="number" step="any" value="18">
+    <label for="s-b">Your wheelbarrow (cubic feet)</label>
+    <input id="s-b" type="number" step="any" value="3">
+    <p class="out" id="s-out"></p>
+  </div>
+
+  <div class="card">
+    <h2>The daylight truth</h2>
+    <label for="d-start">Start hour (24h, e.g. 9 for 9 AM)</label>
+    <input id="d-start" type="number" step="any" value="9">
+    <label for="d-len">Trench length (feet)</label>
+    <input id="d-len" type="number" step="any" value="80">
+    <label for="d-claim">Claimed feet per hour</label>
+    <input id="d-claim" type="number" step="any" value="100">
+    <p class="out" id="d-out"></p>
+  </div>
+
+  <footer>
+    Every figure here is hypothetical arithmetic on labeled norms, not a statement about any real
+    machine or jobsite. <a href="index.html">About Trencher Math</a>
+  </footer>
+</main>
+<script src="engine.js"></script>
+<script>
+function num(id) { return parseFloat(document.getElementById(id).value); }
+function render(id, fn) {
+  const el = document.getElementById(id);
+  try {
+    el.textContent = fn();
+    el.classList.remove("err");
+  } catch (e) {
+    el.textContent = e.message;
+    el.classList.add("err");
+  }
+}
+function update() {
+  render("t-out", () => trenchTruth(num("t-len"), num("t-claim")));
+  render("s-out", () => spoilTruth(num("s-len"), num("s-w"), num("s-d"), num("s-b")));
+  render("d-out", () => daylightTruth(num("d-start"), num("d-len"), num("d-claim")));
+}
+document.querySelectorAll("input").forEach(i => i.addEventListener("input", update));
+update();
+</script>
+</body>
+</html>
